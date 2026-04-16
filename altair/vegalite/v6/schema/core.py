@@ -126,6 +126,7 @@ __all__ = [
     "ConditionalValueDefstringExprRef",
     "ConditionalValueDefstringnullExprRef",
     "Config",
+    "CorrelationTransform",
     "CsvDataFormat",
     "Cursor",
     "Cyclical",
@@ -7942,7 +7943,7 @@ class GenericUnitSpecEncodingAnyMark(VegaLiteSchema):
         channels for other marks.
     title : str, dict, :class:`Text`, Sequence[str], :class:`TitleParams`
         Title for the plot.
-    transform : Sequence[dict, :class:`Transform`, :class:`BinTransform`, :class:`FoldTransform`, :class:`LoessTransform`, :class:`PivotTransform`, :class:`StackTransform`, :class:`ExtentTransform`, :class:`FilterTransform`, :class:`ImputeTransform`, :class:`LookupTransform`, :class:`SampleTransform`, :class:`WindowTransform`, :class:`DensityTransform`, :class:`FlattenTransform`, :class:`QuantileTransform`, :class:`TimeUnitTransform`, :class:`AggregateTransform`, :class:`CalculateTransform`, :class:`RegressionTransform`, :class:`JoinAggregateTransform`]
+    transform : Sequence[dict, :class:`Transform`, :class:`BinTransform`, :class:`FoldTransform`, :class:`LoessTransform`, :class:`PivotTransform`, :class:`StackTransform`, :class:`ExtentTransform`, :class:`FilterTransform`, :class:`ImputeTransform`, :class:`LookupTransform`, :class:`SampleTransform`, :class:`WindowTransform`, :class:`DensityTransform`, :class:`FlattenTransform`, :class:`QuantileTransform`, :class:`TimeUnitTransform`, :class:`AggregateTransform`, :class:`CalculateTransform`, :class:`RegressionTransform`, :class:`CorrelationTransform`, :class:`JoinAggregateTransform`]
         An array of data transformations such as filter and new field calculation.
     """
 
@@ -21256,7 +21257,7 @@ class ConcatSpecGenericSpec(Spec, NonNormalizedSpec):
         (``20`` by default)
     title : str, dict, :class:`Text`, Sequence[str], :class:`TitleParams`
         Title for the plot.
-    transform : Sequence[dict, :class:`Transform`, :class:`BinTransform`, :class:`FoldTransform`, :class:`LoessTransform`, :class:`PivotTransform`, :class:`StackTransform`, :class:`ExtentTransform`, :class:`FilterTransform`, :class:`ImputeTransform`, :class:`LookupTransform`, :class:`SampleTransform`, :class:`WindowTransform`, :class:`DensityTransform`, :class:`FlattenTransform`, :class:`QuantileTransform`, :class:`TimeUnitTransform`, :class:`AggregateTransform`, :class:`CalculateTransform`, :class:`RegressionTransform`, :class:`JoinAggregateTransform`]
+    transform : Sequence[dict, :class:`Transform`, :class:`BinTransform`, :class:`FoldTransform`, :class:`LoessTransform`, :class:`PivotTransform`, :class:`StackTransform`, :class:`ExtentTransform`, :class:`FilterTransform`, :class:`ImputeTransform`, :class:`LookupTransform`, :class:`SampleTransform`, :class:`WindowTransform`, :class:`DensityTransform`, :class:`FlattenTransform`, :class:`QuantileTransform`, :class:`TimeUnitTransform`, :class:`AggregateTransform`, :class:`CalculateTransform`, :class:`RegressionTransform`, :class:`CorrelationTransform`, :class:`JoinAggregateTransform`]
         An array of data transformations such as filter and new field calculation.
     """
 
@@ -21382,7 +21383,7 @@ class FacetSpec(Spec, NonNormalizedSpec):
         (``20`` by default)
     title : str, dict, :class:`Text`, Sequence[str], :class:`TitleParams`
         Title for the plot.
-    transform : Sequence[dict, :class:`Transform`, :class:`BinTransform`, :class:`FoldTransform`, :class:`LoessTransform`, :class:`PivotTransform`, :class:`StackTransform`, :class:`ExtentTransform`, :class:`FilterTransform`, :class:`ImputeTransform`, :class:`LookupTransform`, :class:`SampleTransform`, :class:`WindowTransform`, :class:`DensityTransform`, :class:`FlattenTransform`, :class:`QuantileTransform`, :class:`TimeUnitTransform`, :class:`AggregateTransform`, :class:`CalculateTransform`, :class:`RegressionTransform`, :class:`JoinAggregateTransform`]
+    transform : Sequence[dict, :class:`Transform`, :class:`BinTransform`, :class:`FoldTransform`, :class:`LoessTransform`, :class:`PivotTransform`, :class:`StackTransform`, :class:`ExtentTransform`, :class:`FilterTransform`, :class:`ImputeTransform`, :class:`LookupTransform`, :class:`SampleTransform`, :class:`WindowTransform`, :class:`DensityTransform`, :class:`FlattenTransform`, :class:`QuantileTransform`, :class:`TimeUnitTransform`, :class:`AggregateTransform`, :class:`CalculateTransform`, :class:`RegressionTransform`, :class:`CorrelationTransform`, :class:`JoinAggregateTransform`]
         An array of data transformations such as filter and new field calculation.
     """
 
@@ -21519,7 +21520,7 @@ class FacetedUnitSpec(Spec, NonNormalizedSpec):
         (``20`` by default)
     title : str, dict, :class:`Text`, Sequence[str], :class:`TitleParams`
         Title for the plot.
-    transform : Sequence[dict, :class:`Transform`, :class:`BinTransform`, :class:`FoldTransform`, :class:`LoessTransform`, :class:`PivotTransform`, :class:`StackTransform`, :class:`ExtentTransform`, :class:`FilterTransform`, :class:`ImputeTransform`, :class:`LookupTransform`, :class:`SampleTransform`, :class:`WindowTransform`, :class:`DensityTransform`, :class:`FlattenTransform`, :class:`QuantileTransform`, :class:`TimeUnitTransform`, :class:`AggregateTransform`, :class:`CalculateTransform`, :class:`RegressionTransform`, :class:`JoinAggregateTransform`]
+    transform : Sequence[dict, :class:`Transform`, :class:`BinTransform`, :class:`FoldTransform`, :class:`LoessTransform`, :class:`PivotTransform`, :class:`StackTransform`, :class:`ExtentTransform`, :class:`FilterTransform`, :class:`ImputeTransform`, :class:`LookupTransform`, :class:`SampleTransform`, :class:`WindowTransform`, :class:`DensityTransform`, :class:`FlattenTransform`, :class:`QuantileTransform`, :class:`TimeUnitTransform`, :class:`AggregateTransform`, :class:`CalculateTransform`, :class:`RegressionTransform`, :class:`CorrelationTransform`, :class:`JoinAggregateTransform`]
         An array of data transformations such as filter and new field calculation.
     view : dict, :class:`ViewBackground`
         An object defining the view background's fill and stroke.
@@ -21632,7 +21633,7 @@ class HConcatSpecGenericSpec(Spec, NonNormalizedSpec):
         **Default value**: ``10``
     title : str, dict, :class:`Text`, Sequence[str], :class:`TitleParams`
         Title for the plot.
-    transform : Sequence[dict, :class:`Transform`, :class:`BinTransform`, :class:`FoldTransform`, :class:`LoessTransform`, :class:`PivotTransform`, :class:`StackTransform`, :class:`ExtentTransform`, :class:`FilterTransform`, :class:`ImputeTransform`, :class:`LookupTransform`, :class:`SampleTransform`, :class:`WindowTransform`, :class:`DensityTransform`, :class:`FlattenTransform`, :class:`QuantileTransform`, :class:`TimeUnitTransform`, :class:`AggregateTransform`, :class:`CalculateTransform`, :class:`RegressionTransform`, :class:`JoinAggregateTransform`]
+    transform : Sequence[dict, :class:`Transform`, :class:`BinTransform`, :class:`FoldTransform`, :class:`LoessTransform`, :class:`PivotTransform`, :class:`StackTransform`, :class:`ExtentTransform`, :class:`FilterTransform`, :class:`ImputeTransform`, :class:`LookupTransform`, :class:`SampleTransform`, :class:`WindowTransform`, :class:`DensityTransform`, :class:`FlattenTransform`, :class:`QuantileTransform`, :class:`TimeUnitTransform`, :class:`AggregateTransform`, :class:`CalculateTransform`, :class:`RegressionTransform`, :class:`CorrelationTransform`, :class:`JoinAggregateTransform`]
         An array of data transformations such as filter and new field calculation.
     """
 
@@ -21719,7 +21720,7 @@ class LayerSpec(Spec, NonNormalizedSpec):
         Scale, axis, and legend resolutions for view composition specifications.
     title : str, dict, :class:`Text`, Sequence[str], :class:`TitleParams`
         Title for the plot.
-    transform : Sequence[dict, :class:`Transform`, :class:`BinTransform`, :class:`FoldTransform`, :class:`LoessTransform`, :class:`PivotTransform`, :class:`StackTransform`, :class:`ExtentTransform`, :class:`FilterTransform`, :class:`ImputeTransform`, :class:`LookupTransform`, :class:`SampleTransform`, :class:`WindowTransform`, :class:`DensityTransform`, :class:`FlattenTransform`, :class:`QuantileTransform`, :class:`TimeUnitTransform`, :class:`AggregateTransform`, :class:`CalculateTransform`, :class:`RegressionTransform`, :class:`JoinAggregateTransform`]
+    transform : Sequence[dict, :class:`Transform`, :class:`BinTransform`, :class:`FoldTransform`, :class:`LoessTransform`, :class:`PivotTransform`, :class:`StackTransform`, :class:`ExtentTransform`, :class:`FilterTransform`, :class:`ImputeTransform`, :class:`LookupTransform`, :class:`SampleTransform`, :class:`WindowTransform`, :class:`DensityTransform`, :class:`FlattenTransform`, :class:`QuantileTransform`, :class:`TimeUnitTransform`, :class:`AggregateTransform`, :class:`CalculateTransform`, :class:`RegressionTransform`, :class:`CorrelationTransform`, :class:`JoinAggregateTransform`]
         An array of data transformations such as filter and new field calculation.
     view : dict, :class:`ViewBackground`
         An object defining the view background's fill and stroke.
@@ -21877,7 +21878,7 @@ class LayerRepeatSpec(RepeatSpec):
         (``20`` by default)
     title : str, dict, :class:`Text`, Sequence[str], :class:`TitleParams`
         Title for the plot.
-    transform : Sequence[dict, :class:`Transform`, :class:`BinTransform`, :class:`FoldTransform`, :class:`LoessTransform`, :class:`PivotTransform`, :class:`StackTransform`, :class:`ExtentTransform`, :class:`FilterTransform`, :class:`ImputeTransform`, :class:`LookupTransform`, :class:`SampleTransform`, :class:`WindowTransform`, :class:`DensityTransform`, :class:`FlattenTransform`, :class:`QuantileTransform`, :class:`TimeUnitTransform`, :class:`AggregateTransform`, :class:`CalculateTransform`, :class:`RegressionTransform`, :class:`JoinAggregateTransform`]
+    transform : Sequence[dict, :class:`Transform`, :class:`BinTransform`, :class:`FoldTransform`, :class:`LoessTransform`, :class:`PivotTransform`, :class:`StackTransform`, :class:`ExtentTransform`, :class:`FilterTransform`, :class:`ImputeTransform`, :class:`LookupTransform`, :class:`SampleTransform`, :class:`WindowTransform`, :class:`DensityTransform`, :class:`FlattenTransform`, :class:`QuantileTransform`, :class:`TimeUnitTransform`, :class:`AggregateTransform`, :class:`CalculateTransform`, :class:`RegressionTransform`, :class:`CorrelationTransform`, :class:`JoinAggregateTransform`]
         An array of data transformations such as filter and new field calculation.
     """
 
@@ -22007,7 +22008,7 @@ class NonLayerRepeatSpec(RepeatSpec):
         (``20`` by default)
     title : str, dict, :class:`Text`, Sequence[str], :class:`TitleParams`
         Title for the plot.
-    transform : Sequence[dict, :class:`Transform`, :class:`BinTransform`, :class:`FoldTransform`, :class:`LoessTransform`, :class:`PivotTransform`, :class:`StackTransform`, :class:`ExtentTransform`, :class:`FilterTransform`, :class:`ImputeTransform`, :class:`LookupTransform`, :class:`SampleTransform`, :class:`WindowTransform`, :class:`DensityTransform`, :class:`FlattenTransform`, :class:`QuantileTransform`, :class:`TimeUnitTransform`, :class:`AggregateTransform`, :class:`CalculateTransform`, :class:`RegressionTransform`, :class:`JoinAggregateTransform`]
+    transform : Sequence[dict, :class:`Transform`, :class:`BinTransform`, :class:`FoldTransform`, :class:`LoessTransform`, :class:`PivotTransform`, :class:`StackTransform`, :class:`ExtentTransform`, :class:`FilterTransform`, :class:`ImputeTransform`, :class:`LookupTransform`, :class:`SampleTransform`, :class:`WindowTransform`, :class:`DensityTransform`, :class:`FlattenTransform`, :class:`QuantileTransform`, :class:`TimeUnitTransform`, :class:`AggregateTransform`, :class:`CalculateTransform`, :class:`RegressionTransform`, :class:`CorrelationTransform`, :class:`JoinAggregateTransform`]
         An array of data transformations such as filter and new field calculation.
     """
 
@@ -25187,7 +25188,7 @@ class TopLevelConcatSpec(TopLevelSpec):
         (``20`` by default)
     title : str, dict, :class:`Text`, Sequence[str], :class:`TitleParams`
         Title for the plot.
-    transform : Sequence[dict, :class:`Transform`, :class:`BinTransform`, :class:`FoldTransform`, :class:`LoessTransform`, :class:`PivotTransform`, :class:`StackTransform`, :class:`ExtentTransform`, :class:`FilterTransform`, :class:`ImputeTransform`, :class:`LookupTransform`, :class:`SampleTransform`, :class:`WindowTransform`, :class:`DensityTransform`, :class:`FlattenTransform`, :class:`QuantileTransform`, :class:`TimeUnitTransform`, :class:`AggregateTransform`, :class:`CalculateTransform`, :class:`RegressionTransform`, :class:`JoinAggregateTransform`]
+    transform : Sequence[dict, :class:`Transform`, :class:`BinTransform`, :class:`FoldTransform`, :class:`LoessTransform`, :class:`PivotTransform`, :class:`StackTransform`, :class:`ExtentTransform`, :class:`FilterTransform`, :class:`ImputeTransform`, :class:`LookupTransform`, :class:`SampleTransform`, :class:`WindowTransform`, :class:`DensityTransform`, :class:`FlattenTransform`, :class:`QuantileTransform`, :class:`TimeUnitTransform`, :class:`AggregateTransform`, :class:`CalculateTransform`, :class:`RegressionTransform`, :class:`CorrelationTransform`, :class:`JoinAggregateTransform`]
         An array of data transformations such as filter and new field calculation.
     usermeta : dict, :class:`Dict`
         Optional metadata that will be passed to Vega. This object is completely ignored by
@@ -25362,7 +25363,7 @@ class TopLevelFacetSpec(TopLevelSpec):
         (``20`` by default)
     title : str, dict, :class:`Text`, Sequence[str], :class:`TitleParams`
         Title for the plot.
-    transform : Sequence[dict, :class:`Transform`, :class:`BinTransform`, :class:`FoldTransform`, :class:`LoessTransform`, :class:`PivotTransform`, :class:`StackTransform`, :class:`ExtentTransform`, :class:`FilterTransform`, :class:`ImputeTransform`, :class:`LookupTransform`, :class:`SampleTransform`, :class:`WindowTransform`, :class:`DensityTransform`, :class:`FlattenTransform`, :class:`QuantileTransform`, :class:`TimeUnitTransform`, :class:`AggregateTransform`, :class:`CalculateTransform`, :class:`RegressionTransform`, :class:`JoinAggregateTransform`]
+    transform : Sequence[dict, :class:`Transform`, :class:`BinTransform`, :class:`FoldTransform`, :class:`LoessTransform`, :class:`PivotTransform`, :class:`StackTransform`, :class:`ExtentTransform`, :class:`FilterTransform`, :class:`ImputeTransform`, :class:`LookupTransform`, :class:`SampleTransform`, :class:`WindowTransform`, :class:`DensityTransform`, :class:`FlattenTransform`, :class:`QuantileTransform`, :class:`TimeUnitTransform`, :class:`AggregateTransform`, :class:`CalculateTransform`, :class:`RegressionTransform`, :class:`CorrelationTransform`, :class:`JoinAggregateTransform`]
         An array of data transformations such as filter and new field calculation.
     usermeta : dict, :class:`Dict`
         Optional metadata that will be passed to Vega. This object is completely ignored by
@@ -25493,7 +25494,7 @@ class TopLevelHConcatSpec(TopLevelSpec):
         **Default value**: ``10``
     title : str, dict, :class:`Text`, Sequence[str], :class:`TitleParams`
         Title for the plot.
-    transform : Sequence[dict, :class:`Transform`, :class:`BinTransform`, :class:`FoldTransform`, :class:`LoessTransform`, :class:`PivotTransform`, :class:`StackTransform`, :class:`ExtentTransform`, :class:`FilterTransform`, :class:`ImputeTransform`, :class:`LookupTransform`, :class:`SampleTransform`, :class:`WindowTransform`, :class:`DensityTransform`, :class:`FlattenTransform`, :class:`QuantileTransform`, :class:`TimeUnitTransform`, :class:`AggregateTransform`, :class:`CalculateTransform`, :class:`RegressionTransform`, :class:`JoinAggregateTransform`]
+    transform : Sequence[dict, :class:`Transform`, :class:`BinTransform`, :class:`FoldTransform`, :class:`LoessTransform`, :class:`PivotTransform`, :class:`StackTransform`, :class:`ExtentTransform`, :class:`FilterTransform`, :class:`ImputeTransform`, :class:`LookupTransform`, :class:`SampleTransform`, :class:`WindowTransform`, :class:`DensityTransform`, :class:`FlattenTransform`, :class:`QuantileTransform`, :class:`TimeUnitTransform`, :class:`AggregateTransform`, :class:`CalculateTransform`, :class:`RegressionTransform`, :class:`CorrelationTransform`, :class:`JoinAggregateTransform`]
         An array of data transformations such as filter and new field calculation.
     usermeta : dict, :class:`Dict`
         Optional metadata that will be passed to Vega. This object is completely ignored by
@@ -25628,7 +25629,7 @@ class TopLevelLayerSpec(TopLevelSpec):
         Scale, axis, and legend resolutions for view composition specifications.
     title : str, dict, :class:`Text`, Sequence[str], :class:`TitleParams`
         Title for the plot.
-    transform : Sequence[dict, :class:`Transform`, :class:`BinTransform`, :class:`FoldTransform`, :class:`LoessTransform`, :class:`PivotTransform`, :class:`StackTransform`, :class:`ExtentTransform`, :class:`FilterTransform`, :class:`ImputeTransform`, :class:`LookupTransform`, :class:`SampleTransform`, :class:`WindowTransform`, :class:`DensityTransform`, :class:`FlattenTransform`, :class:`QuantileTransform`, :class:`TimeUnitTransform`, :class:`AggregateTransform`, :class:`CalculateTransform`, :class:`RegressionTransform`, :class:`JoinAggregateTransform`]
+    transform : Sequence[dict, :class:`Transform`, :class:`BinTransform`, :class:`FoldTransform`, :class:`LoessTransform`, :class:`PivotTransform`, :class:`StackTransform`, :class:`ExtentTransform`, :class:`FilterTransform`, :class:`ImputeTransform`, :class:`LookupTransform`, :class:`SampleTransform`, :class:`WindowTransform`, :class:`DensityTransform`, :class:`FlattenTransform`, :class:`QuantileTransform`, :class:`TimeUnitTransform`, :class:`AggregateTransform`, :class:`CalculateTransform`, :class:`RegressionTransform`, :class:`CorrelationTransform`, :class:`JoinAggregateTransform`]
         An array of data transformations such as filter and new field calculation.
     usermeta : dict, :class:`Dict`
         Optional metadata that will be passed to Vega. This object is completely ignored by
@@ -25841,7 +25842,7 @@ class TopLevelUnitSpec(TopLevelSpec):
         (``20`` by default)
     title : str, dict, :class:`Text`, Sequence[str], :class:`TitleParams`
         Title for the plot.
-    transform : Sequence[dict, :class:`Transform`, :class:`BinTransform`, :class:`FoldTransform`, :class:`LoessTransform`, :class:`PivotTransform`, :class:`StackTransform`, :class:`ExtentTransform`, :class:`FilterTransform`, :class:`ImputeTransform`, :class:`LookupTransform`, :class:`SampleTransform`, :class:`WindowTransform`, :class:`DensityTransform`, :class:`FlattenTransform`, :class:`QuantileTransform`, :class:`TimeUnitTransform`, :class:`AggregateTransform`, :class:`CalculateTransform`, :class:`RegressionTransform`, :class:`JoinAggregateTransform`]
+    transform : Sequence[dict, :class:`Transform`, :class:`BinTransform`, :class:`FoldTransform`, :class:`LoessTransform`, :class:`PivotTransform`, :class:`StackTransform`, :class:`ExtentTransform`, :class:`FilterTransform`, :class:`ImputeTransform`, :class:`LookupTransform`, :class:`SampleTransform`, :class:`WindowTransform`, :class:`DensityTransform`, :class:`FlattenTransform`, :class:`QuantileTransform`, :class:`TimeUnitTransform`, :class:`AggregateTransform`, :class:`CalculateTransform`, :class:`RegressionTransform`, :class:`CorrelationTransform`, :class:`JoinAggregateTransform`]
         An array of data transformations such as filter and new field calculation.
     usermeta : dict, :class:`Dict`
         Optional metadata that will be passed to Vega. This object is completely ignored by
@@ -26001,7 +26002,7 @@ class TopLevelVConcatSpec(TopLevelSpec):
         **Default value**: ``10``
     title : str, dict, :class:`Text`, Sequence[str], :class:`TitleParams`
         Title for the plot.
-    transform : Sequence[dict, :class:`Transform`, :class:`BinTransform`, :class:`FoldTransform`, :class:`LoessTransform`, :class:`PivotTransform`, :class:`StackTransform`, :class:`ExtentTransform`, :class:`FilterTransform`, :class:`ImputeTransform`, :class:`LookupTransform`, :class:`SampleTransform`, :class:`WindowTransform`, :class:`DensityTransform`, :class:`FlattenTransform`, :class:`QuantileTransform`, :class:`TimeUnitTransform`, :class:`AggregateTransform`, :class:`CalculateTransform`, :class:`RegressionTransform`, :class:`JoinAggregateTransform`]
+    transform : Sequence[dict, :class:`Transform`, :class:`BinTransform`, :class:`FoldTransform`, :class:`LoessTransform`, :class:`PivotTransform`, :class:`StackTransform`, :class:`ExtentTransform`, :class:`FilterTransform`, :class:`ImputeTransform`, :class:`LookupTransform`, :class:`SampleTransform`, :class:`WindowTransform`, :class:`DensityTransform`, :class:`FlattenTransform`, :class:`QuantileTransform`, :class:`TimeUnitTransform`, :class:`AggregateTransform`, :class:`CalculateTransform`, :class:`RegressionTransform`, :class:`CorrelationTransform`, :class:`JoinAggregateTransform`]
         An array of data transformations such as filter and new field calculation.
     usermeta : dict, :class:`Dict`
         Optional metadata that will be passed to Vega. This object is completely ignored by
@@ -26194,6 +26195,43 @@ class CalculateTransform(Transform):
 
     def __init__(self, calculate: Optional[str] = Undefined, **kwds):
         super().__init__(calculate=calculate, **kwds)
+
+
+class CorrelationTransform(Transform):
+    """
+    CorrelationTransform schema wrapper.
+
+    Parameters
+    ----------
+    correlation : str, :class:`FieldName`
+        The data field of the first variable.
+    on : str, :class:`FieldName`
+        The data field of the second variable.
+    groupby : Sequence[str, :class:`FieldName`]
+        The data fields to group by. If not specified, a single group containing all data
+        objects will be used.
+    weight : str, :class:`FieldName`
+        The data field of per-row weights. When omitted, each row is treated as having
+        weight 1 and the output is the unweighted Pearson correlation.
+    as : Sequence[str, :class:`FieldName`]
+        The output field name for the (weighted) Pearson correlation coefficient.
+
+        **Default value:** ``["corr"]``
+    """
+
+    _schema = {"$ref": "#/definitions/CorrelationTransform"}
+
+    def __init__(
+        self,
+        correlation: Optional[str | SchemaBase] = Undefined,
+        on: Optional[str | SchemaBase] = Undefined,
+        groupby: Optional[Sequence[str | SchemaBase]] = Undefined,
+        weight: Optional[str | SchemaBase] = Undefined,
+        **kwds,
+    ):
+        super().__init__(
+            correlation=correlation, on=on, groupby=groupby, weight=weight, **kwds
+        )
 
 
 class DensityTransform(Transform):
@@ -26674,6 +26712,10 @@ class RegressionTransform(Transform):
         value (indicating the total variance explained by the model).
 
         **Default value:** ``false``
+    weight : str, :class:`FieldName`
+        The data field of per-row weights for weighted least squares regression. Only
+        supported when ``method`` is ``"linear"`` or ``"constant"``; specifying a weight
+        with any other method is an error.
     as : Sequence[str, :class:`FieldName`]
         The output field names for the smoothed points generated by the regression
         transform.
@@ -26694,6 +26736,7 @@ class RegressionTransform(Transform):
         ] = Undefined,
         order: Optional[float] = Undefined,
         params: Optional[bool] = Undefined,
+        weight: Optional[str | SchemaBase] = Undefined,
         **kwds,
     ):
         super().__init__(
@@ -26704,6 +26747,7 @@ class RegressionTransform(Transform):
             method=method,
             order=order,
             params=params,
+            weight=weight,
             **kwds,
         )
 
@@ -27034,7 +27078,7 @@ class UnitSpec(VegaLiteSchema):
         channels for other marks.
     title : str, dict, :class:`Text`, Sequence[str], :class:`TitleParams`
         Title for the plot.
-    transform : Sequence[dict, :class:`Transform`, :class:`BinTransform`, :class:`FoldTransform`, :class:`LoessTransform`, :class:`PivotTransform`, :class:`StackTransform`, :class:`ExtentTransform`, :class:`FilterTransform`, :class:`ImputeTransform`, :class:`LookupTransform`, :class:`SampleTransform`, :class:`WindowTransform`, :class:`DensityTransform`, :class:`FlattenTransform`, :class:`QuantileTransform`, :class:`TimeUnitTransform`, :class:`AggregateTransform`, :class:`CalculateTransform`, :class:`RegressionTransform`, :class:`JoinAggregateTransform`]
+    transform : Sequence[dict, :class:`Transform`, :class:`BinTransform`, :class:`FoldTransform`, :class:`LoessTransform`, :class:`PivotTransform`, :class:`StackTransform`, :class:`ExtentTransform`, :class:`FilterTransform`, :class:`ImputeTransform`, :class:`LookupTransform`, :class:`SampleTransform`, :class:`WindowTransform`, :class:`DensityTransform`, :class:`FlattenTransform`, :class:`QuantileTransform`, :class:`TimeUnitTransform`, :class:`AggregateTransform`, :class:`CalculateTransform`, :class:`RegressionTransform`, :class:`CorrelationTransform`, :class:`JoinAggregateTransform`]
         An array of data transformations such as filter and new field calculation.
     """
 
@@ -27115,7 +27159,7 @@ class UnitSpecWithFrame(VegaLiteSchema):
         channels for other marks.
     title : str, dict, :class:`Text`, Sequence[str], :class:`TitleParams`
         Title for the plot.
-    transform : Sequence[dict, :class:`Transform`, :class:`BinTransform`, :class:`FoldTransform`, :class:`LoessTransform`, :class:`PivotTransform`, :class:`StackTransform`, :class:`ExtentTransform`, :class:`FilterTransform`, :class:`ImputeTransform`, :class:`LookupTransform`, :class:`SampleTransform`, :class:`WindowTransform`, :class:`DensityTransform`, :class:`FlattenTransform`, :class:`QuantileTransform`, :class:`TimeUnitTransform`, :class:`AggregateTransform`, :class:`CalculateTransform`, :class:`RegressionTransform`, :class:`JoinAggregateTransform`]
+    transform : Sequence[dict, :class:`Transform`, :class:`BinTransform`, :class:`FoldTransform`, :class:`LoessTransform`, :class:`PivotTransform`, :class:`StackTransform`, :class:`ExtentTransform`, :class:`FilterTransform`, :class:`ImputeTransform`, :class:`LookupTransform`, :class:`SampleTransform`, :class:`WindowTransform`, :class:`DensityTransform`, :class:`FlattenTransform`, :class:`QuantileTransform`, :class:`TimeUnitTransform`, :class:`AggregateTransform`, :class:`CalculateTransform`, :class:`RegressionTransform`, :class:`CorrelationTransform`, :class:`JoinAggregateTransform`]
         An array of data transformations such as filter and new field calculation.
     view : dict, :class:`ViewBackground`
         An object defining the view background's fill and stroke.
@@ -27263,7 +27307,7 @@ class VConcatSpecGenericSpec(Spec, NonNormalizedSpec):
         **Default value**: ``10``
     title : str, dict, :class:`Text`, Sequence[str], :class:`TitleParams`
         Title for the plot.
-    transform : Sequence[dict, :class:`Transform`, :class:`BinTransform`, :class:`FoldTransform`, :class:`LoessTransform`, :class:`PivotTransform`, :class:`StackTransform`, :class:`ExtentTransform`, :class:`FilterTransform`, :class:`ImputeTransform`, :class:`LookupTransform`, :class:`SampleTransform`, :class:`WindowTransform`, :class:`DensityTransform`, :class:`FlattenTransform`, :class:`QuantileTransform`, :class:`TimeUnitTransform`, :class:`AggregateTransform`, :class:`CalculateTransform`, :class:`RegressionTransform`, :class:`JoinAggregateTransform`]
+    transform : Sequence[dict, :class:`Transform`, :class:`BinTransform`, :class:`FoldTransform`, :class:`LoessTransform`, :class:`PivotTransform`, :class:`StackTransform`, :class:`ExtentTransform`, :class:`FilterTransform`, :class:`ImputeTransform`, :class:`LookupTransform`, :class:`SampleTransform`, :class:`WindowTransform`, :class:`DensityTransform`, :class:`FlattenTransform`, :class:`QuantileTransform`, :class:`TimeUnitTransform`, :class:`AggregateTransform`, :class:`CalculateTransform`, :class:`RegressionTransform`, :class:`CorrelationTransform`, :class:`JoinAggregateTransform`]
         An array of data transformations such as filter and new field calculation.
     """
 

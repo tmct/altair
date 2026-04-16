@@ -7843,6 +7843,44 @@
       },
       "type": "object"
     },
+    "CorrelationTransform": {
+      "additionalProperties": false,
+      "properties": {
+        "as": {
+          "description": "The output field name for the (weighted) Pearson correlation coefficient.\n\n__Default value:__ `[\"corr\"]`",
+          "items": {
+            "$ref": "#/definitions/FieldName"
+          },
+          "maxItems": 1,
+          "minItems": 1,
+          "type": "array"
+        },
+        "correlation": {
+          "$ref": "#/definitions/FieldName",
+          "description": "The data field of the first variable."
+        },
+        "groupby": {
+          "description": "The data fields to group by. If not specified, a single group containing all data objects will be used.",
+          "items": {
+            "$ref": "#/definitions/FieldName"
+          },
+          "type": "array"
+        },
+        "on": {
+          "$ref": "#/definitions/FieldName",
+          "description": "The data field of the second variable."
+        },
+        "weight": {
+          "$ref": "#/definitions/FieldName",
+          "description": "The data field of per-row weights. When omitted, each row is treated as having weight 1 and the output is the unweighted Pearson correlation."
+        }
+      },
+      "required": [
+        "correlation",
+        "on"
+      ],
+      "type": "object"
+    },
     "CsvDataFormat": {
       "additionalProperties": false,
       "properties": {
@@ -21401,6 +21439,10 @@
         "regression": {
           "$ref": "#/definitions/FieldName",
           "description": "The data field of the dependent variable to predict."
+        },
+        "weight": {
+          "$ref": "#/definitions/FieldName",
+          "description": "The data field of per-row weights for weighted least squares regression. Only supported when `method` is `\"linear\"` or `\"constant\"`; specifying a weight with any other method is an error."
         }
       },
       "required": [
@@ -31315,6 +31357,9 @@
         },
         {
           "$ref": "#/definitions/RegressionTransform"
+        },
+        {
+          "$ref": "#/definitions/CorrelationTransform"
         },
         {
           "$ref": "#/definitions/TimeUnitTransform"

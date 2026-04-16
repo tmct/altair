@@ -1227,6 +1227,31 @@ def test_transforms():
     kwds = {"on": "x", "regression": "y", "as": ["xx", "yy"]}
     assert chart.transform == [alt.RegressionTransform(**kwds)]
 
+    # weighted regression transform
+    chart = alt.Chart().transform_regression(
+        "x", "y", as_=["xx", "yy"], weight="w"
+    )
+    kwds = {"on": "x", "regression": "y", "as": ["xx", "yy"], "weight": "w"}
+    assert chart.transform == [alt.RegressionTransform(**kwds)]
+
+    # correlation transform (unweighted)
+    chart = alt.Chart().transform_correlation("y", on="x", as_=["r"])
+    kwds = {"correlation": "y", "on": "x", "as": ["r"]}
+    assert chart.transform == [alt.CorrelationTransform(**kwds)]
+
+    # correlation transform (weighted + groupby + custom output)
+    chart = alt.Chart().transform_correlation(
+        "y", on="x", weight="w", groupby=["g"], as_=["r"]
+    )
+    kwds = {
+        "correlation": "y",
+        "on": "x",
+        "weight": "w",
+        "groupby": ["g"],
+        "as": ["r"],
+    }
+    assert chart.transform == [alt.CorrelationTransform(**kwds)]
+
     # sample transform
     chart = alt.Chart().transform_sample()
     assert chart.transform == [alt.SampleTransform(1000)]

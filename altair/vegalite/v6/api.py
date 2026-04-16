@@ -3495,6 +3495,7 @@ class TopLevelMixin(mixins.ConfigMethodMixin):
         ] = Undefined,
         order: Optional[int] = Undefined,
         params: Optional[bool] = Undefined,
+        weight: Optional[str | FieldName] = Undefined,
     ) -> Self:
         """
         Add a :class:`RegressionTransform` to the chart.
@@ -3527,6 +3528,10 @@ class TopLevelMixin(mixins.ConfigMethodMixin):
             (starting with the intercept term and then including terms of increasing order)
             and an ``rSquared`` value (indicating the total variance explained by the model).
             **Default value:** ``false``
+        weight : str
+            The data field of per-row weights for weighted least squares regression.
+            Only supported when ``method`` is ``"linear"`` or ``"constant"``; specifying a
+            weight with any other method is an error.
 
         Returns
         -------
@@ -3536,6 +3541,7 @@ class TopLevelMixin(mixins.ConfigMethodMixin):
         See Also
         --------
         Chart.transform_loess : LOESS transform
+        Chart.transform_correlation : (weighted) Pearson correlation transform
         alt.RegressionTransform : underlying transform object
         """
         return self._add_transform(
@@ -3547,6 +3553,57 @@ class TopLevelMixin(mixins.ConfigMethodMixin):
                 method=method,
                 order=order,
                 params=params,
+                weight=weight,
+                **{"as": as_},
+            )
+        )
+
+    def transform_correlation(
+        self,
+        correlation: str | FieldName,
+        on: str | FieldName,
+        weight: Optional[str | FieldName] = Undefined,
+        groupby: Optional[list[str | FieldName]] = Undefined,
+        as_: Optional[list[str | FieldName]] = Undefined,
+    ) -> Self:
+        """
+        Add a :class:`CorrelationTransform` to the chart.
+
+        Computes the (optionally weighted) Pearson correlation coefficient between
+        two data fields, producing a single value per group.
+
+        Parameters
+        ----------
+        correlation : str
+            The data field of the first variable.
+        on : str
+            The data field of the second variable.
+        weight : str
+            The data field of per-row weights. When omitted, each row is treated as
+            having weight 1 and the output is the unweighted Pearson correlation.
+        groupby : List(str)
+            The data fields to group by. If not specified, a single group containing
+            all data objects will be used.
+        as_ : [str]
+            The output field name for the correlation coefficient.
+            **Default value:** ``["corr"]``
+
+        Returns
+        -------
+        self : Chart object
+            returns chart to allow for chaining
+
+        See Also
+        --------
+        Chart.transform_regression : regression (and weighted linear regression)
+        alt.CorrelationTransform : underlying transform object
+        """
+        return self._add_transform(
+            core.CorrelationTransform(
+                correlation=correlation,
+                on=on,
+                weight=weight,
+                groupby=groupby,
                 **{"as": as_},
             )
         )
