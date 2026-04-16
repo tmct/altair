@@ -146,6 +146,7 @@ __all__ = [
     "ConditionalValueDefstringExprRef",
     "ConditionalValueDefstringnullExprRef",
     "Config",
+    "CorrelationTransform",
     "CsvDataFormat",
     "Cursor",
     "Cyclical",
